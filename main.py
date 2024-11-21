@@ -23,7 +23,7 @@ def handle_userinput(coin,COIN_API):
   data_array = df['Data']['Data']
   
   df2 = pd.DataFrame(data_array)
-  st.df2()
+  st.table(df2)
   
 
 
