@@ -22,7 +22,7 @@ def handle_userinput(coin,COIN_API):
   # Access the 'Data' array
   data_array = df['Data']['Data']
 
-
+  st.write(df.info())
 
 
 def main():
