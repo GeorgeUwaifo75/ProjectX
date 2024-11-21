@@ -30,14 +30,15 @@ def handle_userinput(coin,COIN_API):
   data_array = df['Data']['Data']
   
   df2 = pd.DataFrame(data_array)
+ 
   st.write(df2.shape)
 
   # Iterate through the items in the 'Data' array
-  for item in data_array:
-      # Process each item here
-      st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto']) 
+  #for item in data_array:
+  #    # Process each item here
+  #    st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto']) 
 
-  df2 = df2.sort_values('time', ascending=True)
+  #df2 = df2.sort_values('time', ascending=True)
 
   #New addition
   # Find the index of 'high' in the DataFrame columns
@@ -47,15 +48,13 @@ def handle_userinput(coin,COIN_API):
     # Handle case where 'high' column doesn't exist.  Choose a default or handle the error appropriately
     default_index = 0  # Defaults to the first column if 'high' is missing.  You might want a more informative message here.
     st.warning("Column 'high' not found, defaulting to the first column.")
-
-
   column = st.selectbox('Select a column', df2.columns, index=default_index)
 
   
   #column = st.selectbox('Select a column', df2.columns)
   title = st.text_input('Title', 'Line Plot')
   x_label = st.text_input('X-axis Label', 'X-axis')
-  y_label = st.text_input('Y-axis Label', 'Y-axis')
+  y_label = st.text_input('Y-axis Label', df2[column])   #'Y-axis'
   color = st.color_picker('Line Color', '#1f77b4')
 
   fig, ax = plt.subplots()
