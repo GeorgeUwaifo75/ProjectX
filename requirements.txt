@@ -8,4 +8,7 @@ faiss-cpu
 unstructured
 sentence-transformers
 matplotlib
-sklearn
+scipy
+pandas
+numpy
+scikit-learn
