@@ -31,14 +31,24 @@ def handle_userinput(coin,COIN_API):
   
   df2 = pd.DataFrame(data_array)
  
-  st.write(df2.shape)
+  #st.write(df2.shape)
 
   # Iterate through the items in the 'Data' array
   #for item in data_array:
   #    # Process each item here
   #    st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto']) 
 
-  #df2 = df2.sort_values('time', ascending=True)
+  try:
+  # Convert Unix timestamps to datetime objects
+  df2['time'] = pd.to_datetime(df2['time'], unit='s')
+
+  # Format the datetime objects to 'YYYY-mm-dd'
+  df2['time'] = df2['time'].dt.strftime('%Y-%m-%d')
+  except (ValueError, TypeError) as e:
+      st.error(f"Error converting timestamps: {e}")
+      st.stop() #Stop execution if conversion fails
+
+  df2 = df2.sort_values('time', ascending=True)
 
   #New addition
   # Find the index of 'high' in the DataFrame columns
