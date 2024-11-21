@@ -39,11 +39,11 @@ def handle_userinput(coin,COIN_API):
   #    st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto']) 
 
   try:
-  # Convert Unix timestamps to datetime objects
-  df2['time'] = pd.to_datetime(df2['time'], unit='s')
-
-  # Format the datetime objects to 'YYYY-mm-dd'
-  df2['time'] = df2['time'].dt.strftime('%Y-%m-%d')
+      # Convert Unix timestamps to datetime objects
+      df2['time'] = pd.to_datetime(df2['time'], unit='s')
+  
+      # Format the datetime objects to 'YYYY-mm-dd'
+      df2['time'] = df2['time'].dt.strftime('%Y-%m-%d')
   except (ValueError, TypeError) as e:
       st.error(f"Error converting timestamps: {e}")
       st.stop() #Stop execution if conversion fails
