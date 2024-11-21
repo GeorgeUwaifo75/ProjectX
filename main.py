@@ -40,7 +40,19 @@ def handle_userinput(coin,COIN_API):
   df2 = df2.sort_values('time', ascending=True)
 
   #New addition
-  column = st.selectbox('Select a column', df2.columns)
+  # Find the index of 'high' in the DataFrame columns
+  try:
+    default_index = list(df2.columns).index('high')
+  except ValueError:
+    # Handle case where 'high' column doesn't exist.  Choose a default or handle the error appropriately
+    default_index = 0  # Defaults to the first column if 'high' is missing.  You might want a more informative message here.
+    st.warning("Column 'high' not found, defaulting to the first column.")
+
+
+  column = st.selectbox('Select a column', df2.columns, index=default_index)
+
+  
+  #column = st.selectbox('Select a column', df2.columns)
   title = st.text_input('Title', 'Line Plot')
   x_label = st.text_input('X-axis Label', 'X-axis')
   y_label = st.text_input('Y-axis Label', 'Y-axis')
