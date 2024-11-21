@@ -30,7 +30,7 @@ def main():
 
   # Ask a question
   if user_question:
-      st.write("Coin:",coin)
+      # st.write("Coin:",coin)
       handle_userinput(user_question)
     
 
