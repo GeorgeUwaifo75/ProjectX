@@ -24,7 +24,7 @@ def handle_userinput(coin,COIN_API):
   
   df2 = pd.DataFrame(data_array)
   
-  st.write(df[:4])
+  st.write(df)
 
 
 def main():
