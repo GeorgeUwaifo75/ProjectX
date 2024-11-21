@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 import pandas as pd
 import json
-
 from dotenv import load_dotenv
 
 from datetime import datetime
