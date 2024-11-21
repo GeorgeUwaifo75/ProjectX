@@ -5,10 +5,6 @@ import json
 from dotenv import load_dotenv
 load_dotenv()
 
-coin = ""
-user_question=""
-#COIN_API=""
-
 def return_url(coin, COIN_API):
   return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}"
 
@@ -27,7 +23,10 @@ def handle_userinput(coin,COIN_API):
 
 
 def main():
-  
+  coin = ""
+  user_question=""
+  COIN_API=""
+
   st.set_page_config(page_title="Short term Currency evaluation", page_icon=":books:")
     
   do_initApp()
