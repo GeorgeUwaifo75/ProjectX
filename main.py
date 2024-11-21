@@ -3,6 +3,8 @@ import requests
 import pandas as pd
 import json
 
+from dotenv import load_dotenv
+
 from datetime import datetime
 
 # The API endpoint
@@ -18,6 +20,8 @@ def do_initApp():
 
 def main():
   load_dotenv()
+  st.set_page_config(page_title="Short term Currency evaluation", page_icon=":books:")
+    
   do_initApp()
 
 
