@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import pandas as pd
+import numpy as np
 import json
 from dotenv import load_dotenv
 load_dotenv()
@@ -24,8 +25,19 @@ def handle_userinput(coin,COIN_API):
   
   df2 = pd.DataFrame(data_array)
   st.write(df2.shape)
-  for x in df2:
-    st.write([low])
+  
+
+  index = pd.MultiIndex.from_tuples([('one', 'a'), ('one', 'b'),
+                                     ('two', 'a'), ('two', 'b')])
+  
+  df = pd.DataFrame(np.random.randn(4, 2), index=index)
+  
+  st.write('##### Multiindex df')
+  st.table(df)
+  
+  u1 = df.unstack(level=1)
+  st.write('##### unstack level=1')
+  st.table(u1)
 
 
 def main():
