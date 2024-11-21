@@ -25,20 +25,11 @@ def handle_userinput(coin,COIN_API):
   
   df2 = pd.DataFrame(data_array)
   st.write(df2.shape)
-  
 
-  index = pd.MultiIndex.from_tuples([('one', 'a'), ('one', 'b'),
-                                     ('two', 'a'), ('two', 'b')])
-  
-  df = pd.DataFrame(np.random.randn(4, 2), index=index)
-  
-  st.write('##### Multiindex df')
-  st.table(df)
-  
-  u1 = df.unstack(level=1)
-  st.write('##### unstack level=1')
-  st.table(u1)
-
+  # Iterate through the items in the 'Data' array
+  for item in data_array:
+      # Process each item here
+      st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto'])  
 
 def main():
   coin = ""
