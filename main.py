@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 coin = ""
 user_question=""
+COIN_API=""
 
 def return_url(coin, COIN_API):
   return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}"
