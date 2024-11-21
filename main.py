@@ -21,7 +21,11 @@ def handle_userinput(coin,COIN_API):
   df = pd.read_json(url)
   # Access the 'Data' array
   data_array = df['Data']['Data']
-
+  
+  df2 = pd.DataFrame(data_array)
+  print(df2.info())
+  print(df2.head())
+  
   st.write(df.info())
 
 
