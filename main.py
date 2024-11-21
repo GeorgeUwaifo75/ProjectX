@@ -12,7 +12,7 @@ def do_initApp():
 
 def handle_userinput(coin):
   # The API endpoint
-  url =  f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}";
+  url =  "https://min-api.cryptocompare.com/data/v2/histohour?fsym=",coin,"&tsym=USD&limit=10&api_key=",COIN_API;
   st.write(url)
   # A GET request to the API
   response = requests.get(url)
