@@ -5,6 +5,7 @@ import json
 from dotenv import load_dotenv
 
 
+coin = ""
 
 def do_initApp():
   st.title("Short term Currency evaluation")
