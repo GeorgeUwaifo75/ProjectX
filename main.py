@@ -47,7 +47,7 @@ def handle_userinput(coin,COIN_API):
   color = st.color_picker('Line Color', '#1f77b4')
 
   fig, ax = plt.subplots()
-  ax.plot(df2['time'], df2['high'], color=color)
+  ax.plot(df2['time'], df2[column], color=color)
   ax.set_title(title)
   ax.set_xlabel(x_label)
   ax.set_ylabel(y_label)
