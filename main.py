@@ -16,11 +16,20 @@ df = pd.read_json(url)
 def do_initApp():
   st.title("Short term Currency evaluation")
 
+def handle_userinput():
+  pass
+
 def main():
   load_dotenv()
   st.set_page_config(page_title="Short term Currency evaluation", page_icon=":books:")
     
   do_initApp()
+  user_question = st.text_input("Ask a question about Crypto coin:")
+
+  # Ask a question
+  if user_question:
+      handle_userinput(user_question)
+    
 
 
 if __name__ == '__main__':
