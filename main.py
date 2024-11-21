@@ -23,8 +23,8 @@ def handle_userinput(coin,COIN_API):
   data_array = df['Data']['Data']
   
   df2 = pd.DataFrame(data_array)
-  st.write(df2.info())
-  st.write(df2.head())
+  st.df2.info()
+  st.df2.head()
 
 
 def main():
