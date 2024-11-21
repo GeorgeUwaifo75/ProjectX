@@ -29,7 +29,29 @@ def handle_userinput(coin,COIN_API):
   # Iterate through the items in the 'Data' array
   for item in data_array:
       # Process each item here
-      st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto'])  
+      st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto']) 
+
+  df2 = df2.sort_values('time', ascending=True)
+
+  #New addition
+  column = st.selectbox('Select a column', df2.columns)
+  title = st.text_input('Title', 'Line Plot')
+  x_label = st.text_input('X-axis Label', 'X-axis')
+  y_label = st.text_input('Y-axis Label', 'Y-axis')
+  color = st.color_picker('Line Color', '#1f77b4')
+
+  fig, ax = plt.subplots()
+  ax.plot(df2['time'], df2['high'], color=color)
+  ax.set_title(title)
+  ax.set_xlabel(x_label)
+  ax.set_ylabel(y_label)
+
+  # Rotate X-axis labels
+  plt.xticks(rotation=45)
+
+  st.pyplot(fig)
+#New addition ends
+
 
 def main():
   coin = ""
