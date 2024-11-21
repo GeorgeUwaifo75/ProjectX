@@ -43,7 +43,8 @@ def handle_userinput(coin,COIN_API):
       df2['time'] = pd.to_datetime(df2['time'], unit='s')
   
       # Format the datetime objects to 'YYYY-mm-dd'
-      df2['time'] = df2['time'].dt.strftime('%Y-%m-%d')
+      df2['time'] = df2['time'].dt.strftime('%Y-%m-%d %H:%M:%S')
+
   except (ValueError, TypeError) as e:
       st.error(f"Error converting timestamps: {e}")
       st.stop() #Stop execution if conversion fails
