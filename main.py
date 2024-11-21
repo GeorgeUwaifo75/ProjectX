@@ -54,7 +54,7 @@ def handle_userinput(coin,COIN_API):
   #column = st.selectbox('Select a column', df2.columns)
   title = st.text_input('Title', 'Line Plot')
   x_label = st.text_input('X-axis Label', 'X-axis')
-  y_label = st.text_input('Y-axis Label', df2[column])   #'Y-axis'
+  y_label = st.text_input('Y-axis Label', str(df2[column]))   #
   color = st.color_picker('Line Color', '#1f77b4')
 
   fig, ax = plt.subplots()
