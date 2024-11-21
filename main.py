@@ -6,13 +6,17 @@ from dotenv import load_dotenv
 
 
 coin = ""
+user_question=""
+
+def return_url(coin, COIN_API):
+  return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}"
 
 def do_initApp():
   st.title("Short term Currency evaluation")
 
-def handle_userinput(coin):
+def handle_userinput(coin,COIN_API):
   # The API endpoint
-  url =  "https://min-api.cryptocompare.com/data/v2/histohour?fsym=",coin,"&tsym=USD&limit=10&api_key=",COIN_API;
+  url =  return_url(coin,COIN_API)
   st.write(url)
   # A GET request to the API
   response = requests.get(url)
@@ -31,7 +35,7 @@ def main():
   # Ask a question
   if user_question:
       # st.write("Coin:",coin)
-      handle_userinput(user_question)
+      handle_userinput(user_question,COIN_API)
     
 
 
