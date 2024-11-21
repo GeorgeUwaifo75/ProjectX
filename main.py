@@ -11,13 +11,13 @@ def do_initApp():
 
 def handle_userinput(coin):
   # The API endpoint
-  st.write("Coin:",coin)
   url =  "https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}";
 
   # A GET request to the API
   response = requests.get(url)
 
   df = pd.read_json(url)
+  st.write(df.head())
 
 
 def main():
@@ -29,6 +29,7 @@ def main():
 
   # Ask a question
   if user_question:
+      st.write("Coin:",coin)
       handle_userinput(user_question)
     
 
