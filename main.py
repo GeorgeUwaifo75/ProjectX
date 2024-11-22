@@ -116,7 +116,10 @@ def main():
       
       st.write("Sentiment: ",sentiment)
       st.write("Probability: ",probability)
-    
+      if sentiment == "positive" and probability>.850:
+        st.write("Go ahead and buy.")
+      else:
+        st.write("Don't buy yet!") 
     
 
 
