@@ -110,7 +110,7 @@ def main():
       # st.write("Coin:",coin)
       handle_userinput(user_question,COIN_API)
       
-      probability, sentiment = self.get_sentiment()
+      #probability, sentiment = self.get_sentiment()
       
       st.write("Sentiment: ",sentiment)
       st.write("Probability: ",probability)
