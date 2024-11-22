@@ -27,7 +27,6 @@ def get_online_news():
     #Requesting website
     url = "https://www.coindesk.com/"
     response = requests.get(url)
-    print("Response code is", response)
     
     if response.status_code == 200: #Check for successful response
         soup = BeautifulSoup(response.text, "html.parser")
@@ -51,6 +50,7 @@ def get_sentiment():
   #news = [ev.__dict__["_raw"]["headline"] for ev in news] 
  
   news = get_online_news()
+  st.write("News: ",news)
   #news = "This coin has a lot of patronage at this time.  You should probably buy"
   
   probability, sentiment = estimate_sentiment(news)
