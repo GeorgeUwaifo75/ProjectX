@@ -21,7 +21,7 @@ def estimate_sentiment(news):
     else:
         return 0, labels[-1]
 
-
+#Created
 if __name__ == "__main__":
     tensor, sentiment = estimate_sentiment(['markets responded negatively to the news!','traders were displeased!'])
     print(tensor, sentiment)
