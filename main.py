@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import requests
 import pandas as pd
@@ -100,7 +101,7 @@ def handle_userinput(coin,COIN_API):
 def main():
   coin = ""
   user_question=""
-  COIN_API=""
+  COIN_API== os.environ.get("COIN_API")
 
   st.set_page_config(page_title="Short term Currency evaluation", page_icon=":books:")
     
