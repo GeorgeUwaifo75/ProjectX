@@ -31,11 +31,11 @@ def get_online_news(coin):
     response = requests.get(url)
     
     if response.status_code == 200: #Check for successful response
-        st.write("Coin:",{coin})
+        st.write("Coin:",coin)
         soup = BeautifulSoup(response.text, "html.parser")
         headlines = soup.find_all("h3")
         for headline in headlines:
-            if {coin} in headline.text.lower(): # Case-insensitive check
+            if coin in headline.text.lower(): # Case-insensitive check
                 #print(headline.text)
                 text+= headline.text+ ".\n"
                 
