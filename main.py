@@ -17,6 +17,7 @@ def return_url(coin, COIN_API):
 
 def do_initApp():
   st.title("Short term Currency evaluation")
+  
 
 def handle_userinput(coin,COIN_API):
   # The API endpoint
