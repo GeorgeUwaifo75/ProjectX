@@ -123,7 +123,7 @@ def handle_userinput(coin,COIN_API):
 
 
 def main():
-  coin = ""
+  global coin = ""
   user_question=""
   COIN_API = os.environ.get("COIN_API")
 
