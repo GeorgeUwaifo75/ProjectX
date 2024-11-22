@@ -65,7 +65,7 @@ def get_sentiment(coin):
 def handle_userinput(coin,COIN_API):
   # The API endpoint
   url =  return_url(coin,COIN_API)
-  st.write(url)
+  #st.write(url)
   # A GET request to the API
   response = requests.get(url)
 
