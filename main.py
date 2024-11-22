@@ -6,7 +6,7 @@ import json
 import matplotlib.pyplot as plt
 from scipy import stats
 from sklearn import linear_model
-from finbert_utils import estimmate_sentiment
+from finbert_utils import estimate_sentiment
 
 
 from dotenv import load_dotenv
