@@ -15,6 +15,9 @@ from bs4 import BeautifulSoup
 
 from dotenv import load_dotenv
 load_dotenv()
+coin = ""
+
+
 
 def return_url(coin, COIN_API):
   return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}"
@@ -123,7 +126,7 @@ def handle_userinput(coin,COIN_API):
 
 
 def main():
-  global coin = ""
+  #coin = ""
   user_question=""
   COIN_API = os.environ.get("COIN_API")
 
