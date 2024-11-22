@@ -18,8 +18,8 @@ def return_url(coin, COIN_API):
 def do_initApp():
   st.title("Short term Currency evaluation")
 
-def get_sentiment(self): 
-  today, three_days_prior = self.get_dates()
+def get_sentiment(): 
+  #today, three_days_prior = self.get_dates()
   #news = self.api.get_news(symbol=self.symbol, 
   #                             start=three_days_prior , 
   #                             end=today)
@@ -113,7 +113,7 @@ def main():
       # st.write("Coin:",coin)
       handle_userinput(user_question,COIN_API)
       
-      probability, sentiment = self.get_sentiment()
+      probability, sentiment = get_sentiment()
       
       #st.write("Sentiment: ",sentiment)
       #st.write("Probability: ",probability)
