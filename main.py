@@ -25,7 +25,7 @@ def return_url(coin, COIN_API):
 def do_initApp():
   st.title("Short term Currency evaluation")
 
-def get_online_news():
+def get_online_news(coin):
     text=""
     #Requesting website
     url = "https://www.coindesk.com/"
@@ -36,7 +36,7 @@ def get_online_news():
         soup = BeautifulSoup(response.text, "html.parser")
         headlines = soup.find_all("h3")
         for headline in headlines:
-            if str(coin) in headline.text.lower(): # Case-insensitive check
+            if coin in headline.text.lower(): # Case-insensitive check
                 #print(headline.text)
                 text+= headline.text+ ".\n"
                 
@@ -45,7 +45,7 @@ def get_online_news():
     return text
   
 
-def get_sentiment(): 
+def get_sentiment(coin): 
   #today, three_days_prior = self.get_dates()
   #news = self.api.get_news(symbol=self.symbol, 
   #                             start=three_days_prior , 
@@ -53,7 +53,7 @@ def get_sentiment():
   #The section below uses the ev object to access the dictionary to get the ["Headline"] in News to create a List.
   #news = [ev.__dict__["_raw"]["headline"] for ev in news] 
  
-  news = get_online_news()
+  news = get_online_news(coin)
   st.write("News: ",news)
   #news = "This coin has a lot of patronage at this time.  You should probably buy"
   
@@ -141,7 +141,7 @@ def main():
       # st.write("Coin:",coin)
       handle_userinput(user_question,COIN_API)
       
-      probability, sentiment = get_sentiment()
+      probability, sentiment = get_sentiment(coin)
       
       st.write("Sentiment: ",sentiment)
       st.write("Probability: ",probability)
