@@ -17,7 +17,20 @@ def return_url(coin, COIN_API):
 
 def do_initApp():
   st.title("Short term Currency evaluation")
+
+def get_sentiment(self): 
+  today, three_days_prior = self.get_dates()
+  #news = self.api.get_news(symbol=self.symbol, 
+  #                             start=three_days_prior , 
+  #                             end=today)
+  #The section below uses the ev object to access the dictionary to get the ["Headline"] in News to create a List.
+  #news = [ev.__dict__["_raw"]["headline"] for ev in news] 
+  news = "This coin has a lot of patronage at this time.  You should probably buy"
   
+  probability, sentiment = estimate_sentiment(news)
+  return probability, sentiment  
+
+
 
 def handle_userinput(coin,COIN_API):
   # The API endpoint
