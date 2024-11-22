@@ -13,7 +13,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def return_url(coin, COIN_API):
-  return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key=f40243a801d1e370c14f7fa36a71cab5cce7c1c035e9551fc7a0592901f3ea53"
+  #return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key=f40243a801d1e370c14f7fa36a71cab5cce7c1c035e9551fc7a0592901f3ea53"
+  return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}"
 
 def do_initApp():
   st.title("Short term Currency evaluation")
@@ -109,7 +110,7 @@ def main():
   # Ask a question
   if user_question:
       # st.write("Coin:",coin)
-      handle_userinput(user_question,COIN_API)
+      handle_userinput(user_question,'COIN_API')
       
       probability, sentiment = get_sentiment()
       
