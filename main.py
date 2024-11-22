@@ -28,8 +28,8 @@ def get_sentiment(self):
   news = "This coin has a lot of patronage at this time.  You should probably buy"
   
   probability, sentiment = estimate_sentiment(news)
-  st.write("Sentiment: ",sentiment)
-  st.write("Probability: ",probability)
+  #st.write("Sentiment: ",sentiment)
+  #st.write("Probability: ",probability)
     
   return probability, sentiment  
 
@@ -113,7 +113,7 @@ def main():
       # st.write("Coin:",coin)
       handle_userinput(user_question,COIN_API)
       
-      probability, sentiment = get_sentiment()
+      probability, sentiment = self.get_sentiment()
       
       #st.write("Sentiment: ",sentiment)
       #st.write("Probability: ",probability)
