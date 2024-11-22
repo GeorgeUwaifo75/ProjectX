@@ -28,6 +28,9 @@ def get_sentiment(self):
   news = "This coin has a lot of patronage at this time.  You should probably buy"
   
   probability, sentiment = estimate_sentiment(news)
+  st.write("Sentiment: ",sentiment)
+  st.write("Probability: ",probability)
+    
   return probability, sentiment  
 
 
