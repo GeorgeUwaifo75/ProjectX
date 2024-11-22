@@ -32,6 +32,7 @@ def get_online_news():
     response = requests.get(url)
     
     if response.status_code == 200: #Check for successful response
+        st.write("Coin:",str(coin))
         soup = BeautifulSoup(response.text, "html.parser")
         headlines = soup.find_all("h3")
         for headline in headlines:
