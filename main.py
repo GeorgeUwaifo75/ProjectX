@@ -112,8 +112,8 @@ def main():
       
       #probability, sentiment = self.get_sentiment()
       
-      st.write("Sentiment: ",sentiment)
-      st.write("Probability: ",probability)
+      #st.write("Sentiment: ",sentiment)
+      #st.write("Probability: ",probability)
     
     
 
