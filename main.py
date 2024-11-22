@@ -28,8 +28,6 @@ def get_sentiment():
   news = "This coin has a lot of patronage at this time.  You should probably buy"
   
   probability, sentiment = estimate_sentiment(news)
-  #st.write("Sentiment: ",sentiment)
-  #st.write("Probability: ",probability)
     
   return probability, sentiment  
 
@@ -115,8 +113,8 @@ def main():
       
       probability, sentiment = get_sentiment()
       
-      #st.write("Sentiment: ",sentiment)
-      #st.write("Probability: ",probability)
+      st.write("Sentiment: ",sentiment)
+      st.write("Probability: ",probability)
     
     
 
