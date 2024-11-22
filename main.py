@@ -32,7 +32,7 @@ def get_online_news():
         soup = BeautifulSoup(response.text, "html.parser")
         headlines = soup.find_all("h3")
         for headline in headlines:
-            if coin in headline.text.lower(): # Case-insensitive check
+            if f"{coin}" in headline.text.lower(): # Case-insensitive check
                 #print(headline.text)
                 text+= headline.text+ ".\n"
                 
