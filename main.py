@@ -9,6 +9,10 @@ from scipy import stats
 from sklearn import linear_model
 from finbert_utils import estimate_sentiment
 
+import time
+from bs4 import BeautifulSoup
+
+
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -19,6 +23,26 @@ def return_url(coin, COIN_API):
 def do_initApp():
   st.title("Short term Currency evaluation")
 
+def get_online_news():
+    text=""
+    #Requesting website
+    url = "https://www.coindesk.com/"
+    response = requests.get(url)
+    print("Response code is", response)
+    
+    if response.status_code == 200: #Check for successful response
+        soup = BeautifulSoup(response.text, "html.parser")
+        headlines = soup.find_all("h3")
+        for headline in headlines:
+            if coin in headline.text.lower(): # Case-insensitive check
+                #print(headline.text)
+                text+= headline.text
+                time.sleep(0)
+    else:
+        print(f"Error: Request failed with status code {response.status_code}")
+    return text
+  
+
 def get_sentiment(): 
   #today, three_days_prior = self.get_dates()
   #news = self.api.get_news(symbol=self.symbol, 
@@ -26,7 +50,9 @@ def get_sentiment():
   #                             end=today)
   #The section below uses the ev object to access the dictionary to get the ["Headline"] in News to create a List.
   #news = [ev.__dict__["_raw"]["headline"] for ev in news] 
-  news = "This coin has a lot of patronage at this time.  You should probably buy"
+ 
+  news = get_online_news()
+  #news = "This coin has a lot of patronage at this time.  You should probably buy"
   
   probability, sentiment = estimate_sentiment(news)
     
