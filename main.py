@@ -9,7 +9,6 @@ from scipy import stats
 from sklearn import linear_model
 from finbert_utils import estimate_sentiment
 
-import time
 from bs4 import BeautifulSoup
 
 
@@ -36,8 +35,8 @@ def get_online_news():
         for headline in headlines:
             if coin in headline.text.lower(): # Case-insensitive check
                 #print(headline.text)
-                text+= headline.text
-                time.sleep(0)
+                text+= headline.text+ ".\n"
+                
     else:
         print(f"Error: Request failed with status code {response.status_code}")
     return text
