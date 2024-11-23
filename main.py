@@ -135,7 +135,7 @@ def main():
 
   # Ask a question
   if user_question:
-        for x in arr:
+        for x in arrx:
             user_question = x
             # st.write("Coin:",coin)
             handle_userinput(user_question,COIN_API)
