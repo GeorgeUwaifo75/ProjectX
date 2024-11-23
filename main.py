@@ -14,6 +14,7 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 load_dotenv()
 
+urls = ["https://u.today/", "https://www.coindesk.com/"]
 #arrx = ["BTC","Eth", "Sol"]
 
 def return_url(coin, COIN_API):
@@ -26,19 +27,22 @@ def get_online_news(coin):
     text=""
     #Requesting website
     url = "https://www.coindesk.com/"
-    response = requests.get(url)
-    
-    if response.status_code == 200: #Check for successful response
-        st.write("Coin:",coin)
-        soup = BeautifulSoup(response.text, "html.parser")
-        headlines = soup.find_all("h3")
-        for headline in headlines:
-            if coin in headline.text.lower(): # Case-insensitive check
-                #print(headline.text)
-                text+= headline.text+ ".\n"
-                
-    else:
-        print(f"Error: Request failed with status code {response.status_code}")
+    for x in urls:
+          #response = requests.get(url)
+          response = x
+          
+          if response.status_code == 200: #Check for successful response
+              st.write("Coin:",coin)
+              soup = BeautifulSoup(response.text, "html.parser")
+              headlines = soup.find_all("h3")
+              for headline in headlines:
+                  if coin in headline.text.lower(): # Case-insensitive check
+                      #print(headline.text)
+                      text+= headline.text+ ".\n"
+                      
+          else:
+              print(f"Error: Request failed with status code {response.status_code}")
+          
     return text
   
 
