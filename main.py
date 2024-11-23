@@ -30,6 +30,7 @@ def get_online_news(coin):
     for x in urls:
           #response = requests.get(url)
           response = requests.get(x)
+          st.write("Url:",x)
           
           if response.status_code == 200: #Check for successful response
               st.write("Coin:",coin)
@@ -37,7 +38,6 @@ def get_online_news(coin):
               headlines = soup.find_all("h3")
               for headline in headlines:
                   if coin in headline.text.lower(): # Case-insensitive check
-                      #print(headline.text)
                       text+= headline.text+ ".\n"
                       
           else:
