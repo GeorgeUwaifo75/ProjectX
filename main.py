@@ -26,7 +26,7 @@ def do_initApp():
 def get_online_news(coin):
     text=""
     #Requesting website
-    url = "https://www.coindesk.com/"
+    #url = "https://www.coindesk.com/"
     for x in urls:
           #response = requests.get(url)
           response = requests.get(x)
