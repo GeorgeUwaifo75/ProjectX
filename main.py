@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 load_dotenv()
 
-arrx = ["BTC","Eth", "Sol"]
+#arrx = ["BTC","Eth", "Sol"]
 
 def return_url(coin, COIN_API):
   return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}"
@@ -135,20 +135,20 @@ def main():
 
   # Ask a question
   if user_question:
-        for x in arrx:
-            user_question = x
-            # st.write("Coin:",coin)
-            handle_userinput(user_question,COIN_API)
-            
-            probability, sentiment = get_sentiment(user_question)
-            
-            st.write("Sentiment: ",sentiment)
-            st.write("Probability: ",probability)
-            if sentiment == "positive" and probability>.850:
-              st.write("Go ahead and buy.")
-            else:
-              st.write("Don't buy yet!")
-            time.sleep(5)
+       
+      user_question = x
+      # st.write("Coin:",coin)
+      handle_userinput(user_question,COIN_API)
+      
+      probability, sentiment = get_sentiment(user_question)
+      
+      st.write("Sentiment: ",sentiment)
+      st.write("Probability: ",probability)
+      if sentiment == "positive" and probability>.850:
+        st.write("Go ahead and buy.")
+      else:
+        st.write("Don't buy yet!")
+          
     
 
 
