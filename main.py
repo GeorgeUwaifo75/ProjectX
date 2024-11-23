@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 load_dotenv()
 
-urls = ["https://u.today/", "https://www.coindesk.com/"]
+urls = ["https://decrypt.co/", "https://www.coindesk.com/"]
 #arrx = ["BTC","Eth", "Sol"]
 
 def return_url(coin, COIN_API):
