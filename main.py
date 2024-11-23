@@ -29,7 +29,7 @@ def get_online_news(coin):
     url = "https://www.coindesk.com/"
     for x in urls:
           #response = requests.get(url)
-          response = x
+          response = requests.get(x)
           
           if response.status_code == 200: #Check for successful response
               st.write("Coin:",coin)
