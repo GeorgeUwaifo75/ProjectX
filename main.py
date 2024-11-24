@@ -139,7 +139,7 @@ def main():
 
   # Ask a question
   if user_question:
-      user_question+="" 
+      user_question+=" " 
       # st.write("Coin:",coin)
       handle_userinput(user_question,COIN_API)
       
