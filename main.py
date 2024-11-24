@@ -141,7 +141,7 @@ def main():
   if user_question:
        
       # st.write("Coin:",coin)
-      handle_userinput((user_question+' '),COIN_API)
+      handle_userinput(user_question,COIN_API)
       
       probability, sentiment = get_sentiment(user_question)
       
