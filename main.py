@@ -54,7 +54,7 @@ def get_sentiment(coin):
   #The section below uses the ev object to access the dictionary to get the ["Headline"] in News to create a List.
   #news = [ev.__dict__["_raw"]["headline"] for ev in news] 
  
-  news = get_online_news(coin)
+  news = get_online_news((coin+" "))
   st.write("News: ",news)
   #news = "This coin has a lot of patronage at this time.  You should probably buy"
   
@@ -139,7 +139,6 @@ def main():
 
   # Ask a question
   if user_question:
-      user_question+=" " 
       # st.write("Coin:",coin)
       handle_userinput(user_question,COIN_API)
       
