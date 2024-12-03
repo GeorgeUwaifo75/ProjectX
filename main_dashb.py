@@ -23,7 +23,7 @@ def return_url(coin, COIN_API):
 def do_initApp():
   st.title("The Dashboard Visual for listed coins")
 
-def create_arrays_plots()
+def create_arrays_plots():
   for coin in arrx:
     handle_userinput(user_question,COIN_API)
 
