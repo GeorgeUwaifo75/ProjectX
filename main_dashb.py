@@ -79,7 +79,7 @@ def handle_userinput(coin,COIN_API,indx):
   st.write("Coin:",coin)
   
   
-  #fig, ax = plt.subplots()
+  fig, ax = plt.subplots(5, 2, indx)
   #ax.plot(df2['time'], df2['high'], color='r')
   #ax.set_title("Coin Label")
   #ax.set_xlabel("x_label")
