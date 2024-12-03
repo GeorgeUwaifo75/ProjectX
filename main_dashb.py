@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 load_dotenv()
 COIN_API = os.environ.get("COIN_API")
 
-
+indx =0
 #COIN_API=""
 #urls = ["https://decrypt.co/news", "https://www.coindesk.com/", "https://thecryptobasic.com/","https://cryptopotato.com/","https://u.today/"]
 arrx = ["BTC","Eth","Sol","wld","DOGE","Pepe","Ada","Trx","Ton","Xmr"]
@@ -31,12 +31,12 @@ def create_arrays_plots():
   for coin in arrx:
     #st.write("Coin_Api:",COIN_API)
     #st.write("Coin:",coin)
-
-    handle_userinput(coin,COIN_API)
+    indx += 1
+    handle_userinput(coin,COIN_API,indx)
     
     
 
-def handle_userinput(coin,COIN_API):
+def handle_userinput(coin,COIN_API,indx):
   # The API endpoint
   url =  return_url(coin,COIN_API)
  
@@ -77,16 +77,21 @@ def handle_userinput(coin,COIN_API):
   st.write("Coin:",coin)
   
   
-  fig, ax = plt.subplots()
-  ax.plot(df2['time'], df2['high'], color='r')
-  ax.set_title("Coin Label")
-  ax.set_xlabel("x_label")
-  ax.set_ylabel("y_label")
+  #fig, ax = plt.subplots()
+  #ax.plot(df2['time'], df2['high'], color='r')
+  #ax.set_title("Coin Label")
+  #ax.set_xlabel("x_label")
+  #ax.set_ylabel("y_label")
 
   # Rotate X-axis labels
-  plt.xticks(rotation=45)
+  #plt.xticks(rotation=45)
 
-  st.pyplot(fig)
+  #st.pyplot(fig)
+
+  plt.subplot(5, 2, indx)
+  plt.plot(df2['time'], df2['high'], color='r')
+
+  plt.show()
 
 
 def main():
