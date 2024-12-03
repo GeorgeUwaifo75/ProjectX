@@ -91,7 +91,7 @@ def handle_userinput(coin,COIN_API,indx):
   #st.pyplot(fig)
 
   plt.subplot(5, 2, indx)
-  plt.plot([df2['time']], [df2['high']], color='r')
+  plt.plot(df2['time'], df2['high'], color='r')
 
   plt.show()
 
