@@ -71,7 +71,7 @@ def handle_userinput(coin,COIN_API):
   # A GET request to the API
   response = requests.get(url)
 
-  st.write("Response:",response)
+  #st.write("Response:",response)
   
   
   df = pd.read_json(url)
