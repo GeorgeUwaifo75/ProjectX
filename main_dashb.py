@@ -32,19 +32,7 @@ def create_arrays_plots():
     #st.write("Coin:",coin)
 
     handle_userinput(coin,COIN_API)
-    #xresponse = handle_userinput(coin,COIN_API)
-    #if xresponse:
-      #st.write("Response Ok", xresponse[Data][Data])
-
-
-def handle_userinputx(coin,COIN_API):
-  # The API endpoint
-  url =  return_url(coin,COIN_API)
- 
-  # A GET request to the API
-  response = requests.get(url)
-  return response
-
+    
 
 def handle_userinput(coin,COIN_API):
   # The API endpoint
