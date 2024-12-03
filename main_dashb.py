@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 load_dotenv()
 COIN_API = os.environ.get("COIN_API")
 
-indx =0
+
 #COIN_API=""
 #urls = ["https://decrypt.co/news", "https://www.coindesk.com/", "https://thecryptobasic.com/","https://cryptopotato.com/","https://u.today/"]
 arrx = ["BTC","Eth","Sol","wld","DOGE","Pepe","Ada","Trx","Ton","Xmr"]
@@ -28,6 +28,7 @@ def do_initApp():
   st.title("The Dashboard Visual for listed coins")
 
 def create_arrays_plots():
+  indx =0
   for coin in arrx:
     #st.write("Coin_Api:",COIN_API)
     #st.write("Coin:",coin)
