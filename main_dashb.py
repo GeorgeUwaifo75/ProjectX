@@ -87,7 +87,7 @@ def handle_userinput(coin,COIN_API,indx):
 
   #ax[indx].plot(df2['time'], df2['high'], color='r')
     
-  ax.set_title("Coin:",coin)
+  ax.set_title(f"Coin:{coin}")
   ax.set_xlabel("Dates")
   ax.set_ylabel("Prices")
 
