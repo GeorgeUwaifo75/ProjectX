@@ -84,7 +84,7 @@ def handle_userinput(coin,COIN_API,indx):
   ax.plot(df2['time'], df2['high'], color='r')
 
   f, (ax1, ax2, ax3, ax4, ax5,ax6, ax7, ax8, ax9, ax10) = plt.subplots(5, 2, sharey=True)
-  ax"{indx}".plot(df2['time'], df2['high'], color='r')
+  ax{indx}.plot(df2['time'], df2['high'], color='r')
 
   
   ax.set_title("Coin Label")
