@@ -80,7 +80,7 @@ def handle_userinput(coin,COIN_API,indx):
   st.write("Coin:",coin)
   
   
-  fig, ax = plt.subplots(figsize=(5, 10))
+  fig, ax = plt.subplots(figsize=(1, 2))
   ax.plot(df2['time'], df2['high'], color='r')
 
   #fig, axs = plt.subplots(5, 2, sharey=True, figsize=(10, 15)) # Added figsize for better visualization
