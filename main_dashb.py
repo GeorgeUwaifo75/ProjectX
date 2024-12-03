@@ -80,16 +80,16 @@ def handle_userinput(coin,COIN_API,indx):
   st.write("Coin:",coin)
   
   
-  #fig, ax = plt.subplots()
-  #ax.plot(df2['time'], df2['high'], color='r')
+  fig, ax = plt.subplots()
+  ax.plot(df2['time'], df2['high'], color='r')
 
-  fig, axs = plt.subplots(5, 2, sharey=True, figsize=(10, 15)) # Added figsize for better visualization
+  #fig, axs = plt.subplots(5, 2, sharey=True, figsize=(10, 15)) # Added figsize for better visualization
 
-  axs.plot(df2['time'], df2['high'], color='r')
+  ax.plot(df2['time'], df2['high'], color='r')
     
-  axs.set_title("Coin Label")
-  axs.set_xlabel("x_label")
-  axs.set_ylabel("y_label")
+  ax.set_title("Coin Label")
+  ax.set_xlabel("x_label")
+  ax.set_ylabel("y_label")
 
   # Rotate X-axis labels
   plt.xticks(rotation=45)
