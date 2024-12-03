@@ -97,7 +97,9 @@ def handle_userinput(coin,COIN_API):
     # Handle case where 'high' column doesn't exist.  Choose a default or handle the error appropriately
     default_index = 0  # Defaults to the first column if 'high' is missing.  You might want a more informative message here.
     st.warning("Column 'high' not found, defaulting to the first column.")
- 
+  
+  column = coin
+
   
   fig, ax = plt.subplots()
   ax.plot(df2['time'], df2[column], color=color)
