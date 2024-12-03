@@ -10,7 +10,7 @@ from scipy import stats
 from sklearn import linear_model
 #from finbert_utils import estimate_sentiment
 
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 load_dotenv()
 COIN_API = os.environ.get("COIN_API")
@@ -27,7 +27,9 @@ def do_initApp():
 
 def create_arrays_plots():
   for coin in arrx:
-    #st.write("Coin_Api:",COIN_API)
+    st.write("Coin_Api:",COIN_API)
+    st.write("Coin:",coin)
+    
     handle_userinput(coin,COIN_API)
 
 
