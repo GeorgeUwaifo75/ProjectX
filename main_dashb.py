@@ -30,10 +30,11 @@ def create_arrays_plots():
   for coin in arrx:
     #st.write("Coin_Api:",COIN_API)
     #st.write("Coin:",coin)
-    
-    xresponse = handle_userinput(coin,COIN_API)
-    if xresponse:
-      st.write("Response Ok", xresponse[Data][Data])
+
+    handle_userinput(coin,COIN_API)
+    #xresponse = handle_userinput(coin,COIN_API)
+    #if xresponse:
+      #st.write("Response Ok", xresponse[Data][Data])
 
 
 def handle_userinputx(coin,COIN_API):
