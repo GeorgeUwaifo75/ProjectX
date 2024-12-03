@@ -25,7 +25,7 @@ def return_url(coin, COIN_API):
   return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}"
 
 def do_initApp():
-  st.title("The Dashboard Visual for listed coins")
+  st.title("Dashboard Visual for all coins")
 
 def create_arrays_plots():
   indx =0
@@ -33,6 +33,7 @@ def create_arrays_plots():
     #st.write("Coin_Api:",COIN_API)
     #st.write("Coin:",coin)
     indx += 1
+    st.write("indx:",indx)
     handle_userinput(coin,COIN_API,indx)
     
     
