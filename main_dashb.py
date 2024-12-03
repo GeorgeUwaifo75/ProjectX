@@ -80,10 +80,10 @@ def handle_userinput(coin,COIN_API,indx):
   st.write("Coin:",coin)
   
   
-  fig, ax = plt.subplots()
-  ax.plot(df2['time'], df2['high'], color='r')
+  #fig, ax = plt.subplots()
+  #ax.plot(df2['time'], df2['high'], color='r')
 
-  f, (ax1, ax2, ax3, ax4, ax5,ax6, ax7, ax8, ax9, ax10) = plt.subplots(5, 2, sharey=True)
+  fig, (ax1, ax2, ax3, ax4, ax5,ax6, ax7, ax8, ax9, ax10) = plt.subplots(5, 2, sharey=True)
   #ax.plot(df2['time'], df2['high'], color='r')
   if indx==1:
     ax1.plot(df2['time'], df2['high'], color='r')
