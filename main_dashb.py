@@ -33,7 +33,7 @@ def create_arrays_plots():
     #st.write("Coin_Api:",COIN_API)
     #st.write("Coin:",coin)
     indx += 1
-    st.write("indx:",indx)
+    #st.write("indx:",indx)
     handle_userinput(coin,COIN_API,indx)
     
     
@@ -91,7 +91,7 @@ def handle_userinput(coin,COIN_API,indx):
   #st.pyplot(fig)
 
   plt.subplot(5, 2, indx)
-  plt.plot(df2['time'], df2['high'], color='r')
+  plt.plot([df2['time']], [df2['high']], color='r')
 
   plt.show()
 
