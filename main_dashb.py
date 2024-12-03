@@ -83,9 +83,10 @@ def handle_userinput(coin,COIN_API):
     st.warning("Column 'high' not found, defaulting to the first column.")
   
   column = coin
-
+  st.write("Coin:",coin)
   
-  #fig, ax = plt.subplots()
+  
+  fig, ax = plt.subplots()
   #ax.plot(df2['time'], df2[column], color=color)
   #ax.set_title(title)
   #ax.set_xlabel(x_label)
