@@ -20,6 +20,7 @@ COIN_API = os.environ.get("COIN_API")
 #urls = ["https://decrypt.co/news", "https://www.coindesk.com/", "https://thecryptobasic.com/","https://cryptopotato.com/","https://u.today/"]
 arrx = ["BTC","Eth","Sol","wld","DOGE","Pepe","Ada","Trx","Ton","Xmr"]
 
+
 def return_url(coin, COIN_API):
   #st.write(f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}")
   return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}"
@@ -79,9 +80,13 @@ def handle_userinput(coin,COIN_API,indx):
   st.write("Coin:",coin)
   
   
-  #fig, ax = plt.subplots()
-  fig, ax = plt.subplot(5, 2, indx)
+  fig, ax = plt.subplots()
   ax.plot(df2['time'], df2['high'], color='r')
+
+  f, (ax1, ax2, ax3, ax4, ax5,ax6, ax7, ax8, ax9, ax10) = plt.subplots(5, 2, sharey=True)
+  ax{indx}.plot(df2['time'], df2['high'], color='r')
+
+  
   ax.set_title("Coin Label")
   ax.set_xlabel("x_label")
   ax.set_ylabel("y_label")
@@ -91,11 +96,7 @@ def handle_userinput(coin,COIN_API,indx):
 
   st.pyplot(fig)
 
-  #plt.subplot(5, 2, indx)
-  #plt.plot(df2['time'], df2['high'], color='r')
-
-  #plt.show()
-
+ 
 
 def main():
   coin = ""
