@@ -76,15 +76,15 @@ def handle_userinput(coin,COIN_API):
   
   
   fig, ax = plt.subplots()
-  #ax.plot(df2['time'], df2[column], color=color)
-  #ax.set_title(title)
-  #ax.set_xlabel(x_label)
-  #ax.set_ylabel(y_label)
+  ax.plot(df2['time'], df2['high'], color=color)
+  ax.set_title(title)
+  ax.set_xlabel(x_label)
+  ax.set_ylabel(y_label)
 
   # Rotate X-axis labels
-  #plt.xticks(rotation=45)
+  plt.xticks(rotation=45)
 
-  #st.pyplot(fig)
+  st.pyplot(fig)
 
 
 def main():
