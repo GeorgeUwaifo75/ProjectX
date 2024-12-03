@@ -33,7 +33,7 @@ def create_arrays_plots():
     #st.write("Coin:",coin)
 
     handle_userinput(coin,COIN_API)
-    indx+=1
+    
     
 
 def handle_userinput(coin,COIN_API):
