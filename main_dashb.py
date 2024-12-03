@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 load_dotenv()
 COIN_API = os.environ.get("COIN_API")
 
-indx=1
+
 #COIN_API=""
 #urls = ["https://decrypt.co/news", "https://www.coindesk.com/", "https://thecryptobasic.com/","https://cryptopotato.com/","https://u.today/"]
 arrx = ["BTC","Eth","Sol","wld","DOGE","Pepe","Ada","Trx","Ton","Xmr"]
@@ -77,7 +77,7 @@ def handle_userinput(coin,COIN_API):
   st.write("Coin:",coin)
   
   
-  fig, ax = plt.subplots(5,2,indx)
+  fig, ax = plt.subplots()
   ax.plot(df2['time'], df2['high'], color='r')
   ax.set_title("Coin Label")
   ax.set_xlabel("x_label")
