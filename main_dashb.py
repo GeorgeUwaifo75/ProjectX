@@ -19,7 +19,6 @@ COIN_API = os.environ.get("COIN_API")
 #COIN_API=""
 #urls = ["https://decrypt.co/news", "https://www.coindesk.com/", "https://thecryptobasic.com/","https://cryptopotato.com/","https://u.today/"]
 arrx = ["BTC","Eth","Sol","wld","DOGE","Pepe","Ada","Trx","Ton","Xmr"]
-ax = ["BTC","Eth","Sol","wld","DOGE","Pepe","Ada","Trx","Ton","Xmr"]
 
 
 def return_url(coin, COIN_API):
@@ -81,16 +80,16 @@ def handle_userinput(coin,COIN_API,indx):
   st.write("Coin:",coin)
   
   
-  #fig, ax = plt.subplots()
-  #ax.plot(df2['time'], df2['high'], color='r')
+  fig, ax = plt.subplots()
+  ax.plot(df2['time'], df2['high'], color='r')
 
-  fig, ax[indx] = plt.subplots(5, 2, sharey=True, figsize=(10, 15)) # Added figsize for better visualization
+  #fig, ax = plt.subplots(5, 2, sharey=True, figsize=(10, 15)) # Added figsize for better visualization
 
-  ax[indx].plot(df2['time'], df2['high'], color='r')
+  #ax[indx].plot(df2['time'], df2['high'], color='r')
     
-  ax[indx].set_title("Coin Label")
-  ax[indx].set_xlabel("x_label")
-  ax[indx].set_ylabel("y_label")
+  ax.set_title("Coin Label")
+  ax.set_xlabel("x_label")
+  ax.set_ylabel("y_label")
 
   # Rotate X-axis labels
   plt.xticks(rotation=45)
