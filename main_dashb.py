@@ -8,14 +8,15 @@ import matplotlib.pyplot as plt
 import time
 from scipy import stats
 from sklearn import linear_model
-from finbert_utils import estimate_sentiment
+#from finbert_utils import estimate_sentiment
 
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 load_dotenv()
+COIN_API = os.environ.get("COIN_API")
 
 #COIN_API=""
-urls = ["https://decrypt.co/news", "https://www.coindesk.com/", "https://thecryptobasic.com/","https://cryptopotato.com/","https://u.today/"]
+#urls = ["https://decrypt.co/news", "https://www.coindesk.com/", "https://thecryptobasic.com/","https://cryptopotato.com/","https://u.today/"]
 arrx = ["BTC","Eth","Sol","LTC","DOGE","Pepe","Ada","Trx","Xml","Xmr"]
 
 def return_url(coin, COIN_API):
@@ -84,7 +85,7 @@ def handle_userinput(coin,COIN_API):
 def main():
   coin = ""
   user_question=""
-  COIN_API = os.environ.get("COIN_API")
+  #COIN_API = os.environ.get("COIN_API")
 
   st.set_page_config(page_title="DashBoard for Coins", page_icon=":books:")
     
