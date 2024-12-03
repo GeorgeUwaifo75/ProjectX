@@ -20,7 +20,7 @@ COIN_API = os.environ.get("COIN_API")
 arrx = ["BTC","Eth","Sol","LTC","DOGE","Pepe","Ada","Trx","Xml","Xmr"]
 
 def return_url(coin, COIN_API):
-  st.write(f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}")
+  #st.write(f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}")
   return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}"
 
 def do_initApp():
@@ -31,8 +31,18 @@ def create_arrays_plots():
     #st.write("Coin_Api:",COIN_API)
     #st.write("Coin:",coin)
     
-    handle_userinput(coin,COIN_API)
+    xresponse = handle_userinputx(coin,COIN_API)
+    if xresponse:
+      st.write("Response Ok", xresponse)
 
+
+def handle_userinputx(coin,COIN_API):
+  # The API endpoint
+  url =  return_url(coin,COIN_API)
+ 
+  # A GET request to the API
+  response = requests.get(url)
+  return response
 
 
 def handle_userinput(coin,COIN_API):
