@@ -79,21 +79,22 @@ def handle_userinput(coin,COIN_API,indx):
   st.write("Coin:",coin)
   
   
-  fig, ax = plt.subplots()
-  #ax.plot(df2['time'], df2['high'], color='r')
-  #ax.set_title("Coin Label")
-  #ax.set_xlabel("x_label")
-  #ax.set_ylabel("y_label")
+  #fig, ax = plt.subplots()
+  fig, ax = plt.subplot(5, 2, indx)
+  ax.plot(df2['time'], df2['high'], color='r')
+  ax.set_title("Coin Label")
+  ax.set_xlabel("x_label")
+  ax.set_ylabel("y_label")
 
   # Rotate X-axis labels
-  #plt.xticks(rotation=45)
+  plt.xticks(rotation=45)
 
-  #st.pyplot(fig)
+  st.pyplot(fig)
 
-  st.pyplot(plt.subplot(5, 2, indx))
-  plt.plot(df2['time'], df2['high'], color='r')
+  #plt.subplot(5, 2, indx)
+  #plt.plot(df2['time'], df2['high'], color='r')
 
-  plt.show()
+  #plt.show()
 
 
 def main():
