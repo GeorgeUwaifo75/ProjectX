@@ -33,7 +33,7 @@ def create_arrays_plots():
     
     xresponse = handle_userinputx(coin,COIN_API)
     if xresponse:
-      st.write("Response Ok", xresponse)
+      st.write("Response Ok", xresponse[Data][Data])
 
 
 def handle_userinputx(coin,COIN_API):
