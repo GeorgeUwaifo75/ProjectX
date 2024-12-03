@@ -19,6 +19,7 @@ COIN_API = os.environ.get("COIN_API")
 #COIN_API=""
 #urls = ["https://decrypt.co/news", "https://www.coindesk.com/", "https://thecryptobasic.com/","https://cryptopotato.com/","https://u.today/"]
 arrx = ["BTC","Eth","Sol","wld","DOGE","Pepe","Ada","Trx","Ton","Xmr"]
+ax = ["BTC","Eth","Sol","wld","DOGE","Pepe","Ada","Trx","Ton","Xmr"]
 
 
 def return_url(coin, COIN_API):
