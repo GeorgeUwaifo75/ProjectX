@@ -27,8 +27,8 @@ def do_initApp():
 
 def create_arrays_plots():
   for coin in arrx:
-    st.write("Coin_Api:",COIN_API)
-    st.write("Coin:",coin)
+    #st.write("Coin_Api:",COIN_API)
+    #st.write("Coin:",coin)
     
     handle_userinput(coin,COIN_API)
 
@@ -41,6 +41,8 @@ def handle_userinput(coin,COIN_API):
   # A GET request to the API
   response = requests.get(url)
 
+  st.write("Response:",response)
+  
   df = pd.read_json(url)
   # Access the 'Data' array
   data_array = df['Data']['Data']
