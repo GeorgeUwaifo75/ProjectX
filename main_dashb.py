@@ -27,7 +27,7 @@ def do_initApp():
 
 def create_arrays_plots():
   for coin in arrx:
-    st.write("Coin_Api:",COIN_API)
+    #st.write("Coin_Api:",COIN_API)
     handle_userinput(coin,COIN_API)
 
 
