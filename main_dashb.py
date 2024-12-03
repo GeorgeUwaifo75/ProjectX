@@ -25,7 +25,7 @@ def do_initApp():
 
 def create_arrays_plots():
   for coin in arrx:
-    handle_userinput(user_question,COIN_API)
+    handle_userinput(coin,COIN_API)
 
 def get_online_news(coin):
     text=""
