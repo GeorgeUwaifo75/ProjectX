@@ -77,7 +77,7 @@ def handle_userinput(coin,COIN_API,indx):
     st.warning("Column 'high' not found, defaulting to the first column.")
   
   column = coin
-  st.write("Coin:",coin)
+  st.write("Plot:",indx)
   
   
   fig, ax = plt.subplots()
