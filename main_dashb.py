@@ -20,6 +20,7 @@ COIN_API = os.environ.get("COIN_API")
 arrx = ["BTC","Eth","Sol","LTC","DOGE","Pepe","Ada","Trx","Xml","Xmr"]
 
 def return_url(coin, COIN_API):
+  st.write(f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}")
   return f"https://min-api.cryptocompare.com/data/v2/histohour?fsym={coin}&tsym=USD&limit=10&api_key={COIN_API}"
 
 def do_initApp():
@@ -41,7 +42,7 @@ def handle_userinput(coin,COIN_API):
   # A GET request to the API
   response = requests.get(url)
 
-  st.write("Response:",response)
+  #st.write("Response:",response)
   
   df = pd.read_json(url)
   # Access the 'Data' array
