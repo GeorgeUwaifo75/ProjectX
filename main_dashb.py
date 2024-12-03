@@ -26,39 +26,8 @@ def do_initApp():
 
 def create_arrays_plots():
   for coin in arrx:
+    st.write("Coin:",coin)
     handle_userinput(coin,COIN_API)
-
-def get_online_news(coin):
-    text=""
-    #Requesting website
-    #url = "https://www.coindesk.com/"
-    for x in urls:
-          #response = requests.get(url)
-          response = requests.get(x)
-          st.write("Url:",x)
-          
-          if response.status_code == 200: #Check for successful response
-              st.write("Coin:",coin)
-              soup = BeautifulSoup(response.text, "html.parser")
-              headlines = soup.find_all("h3")
-              for headline in headlines:
-                  if coin in headline.text.lower(): # Case-insensitive check
-                      text+= headline.text+ ".\n"
-                      
-          else:
-              print(f"Error: Request failed with status code {response.status_code}")
-          
-    return text
-  
-
-def get_sentiment(coin): 
- 
-  news = get_online_news((coin+" "))
-  st.write("News: ",news)
-  
-  probability, sentiment = estimate_sentiment(news)
-    
-  return probability, sentiment  
 
 
 
@@ -89,7 +58,6 @@ def handle_userinput(coin,COIN_API):
 
   df2 = df2.sort_values('time', ascending=True)
 
-  #New addition
   # Find the index of 'high' in the DataFrame columns
   try:
     default_index = list(df2.columns).index('high')
@@ -101,17 +69,16 @@ def handle_userinput(coin,COIN_API):
   column = coin
 
   
-  fig, ax = plt.subplots()
-  ax.plot(df2['time'], df2[column], color=color)
-  ax.set_title(title)
-  ax.set_xlabel(x_label)
-  ax.set_ylabel(y_label)
+  #fig, ax = plt.subplots()
+  #ax.plot(df2['time'], df2[column], color=color)
+  #ax.set_title(title)
+  #ax.set_xlabel(x_label)
+  #ax.set_ylabel(y_label)
 
   # Rotate X-axis labels
-  plt.xticks(rotation=45)
+  #plt.xticks(rotation=45)
 
-  st.pyplot(fig)
-#New addition ends
+  #st.pyplot(fig)
 
 
 def main():
