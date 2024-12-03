@@ -87,9 +87,9 @@ def handle_userinput(coin,COIN_API,indx):
 
   #ax[indx].plot(df2['time'], df2['high'], color='r')
     
-  ax.set_title("Coin Label")
-  ax.set_xlabel("x_label")
-  ax.set_ylabel("y_label")
+  ax.set_title("Coin:",coin)
+  ax.set_xlabel("Dates")
+  ax.set_ylabel("Prices")
 
   # Rotate X-axis labels
   plt.xticks(rotation=45)
