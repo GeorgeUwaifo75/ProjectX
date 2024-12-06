@@ -87,8 +87,11 @@ def handle_userinput(coin,COIN_API):
   #    # Process each item here
   #    st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto']) 
 
-  for x in (8,9,10):
-    st.write("X Value:",df2['high'].[x])
+  for x in (8, 9, 10):
+    try:
+        st.write("X Value:", df2['high'].iloc[x])
+    except IndexError:
+        st.write(f"Index {x} out of bounds.")
     
   try:
       # Convert Unix timestamps to datetime objects
