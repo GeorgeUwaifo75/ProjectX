@@ -88,10 +88,10 @@ def handle_userinput(coin,COIN_API):
   #    st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto']) 
 
   pattn=""
-  for x in (5,6,7,8, 9):
+  for x in (5,6,7,8,9,10):
     try:
         st.write(f"X Value {x}:", df2['high'].iloc[x])
-        if x>=5:
+        if x>=5 & x<10:
           if df2['high'].iloc[x+1] >= df2['high'].iloc[x]:
             pattn +="U"
           else:
