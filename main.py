@@ -90,7 +90,7 @@ def handle_userinput(coin,COIN_API):
   pattn=""
   for x in (5,6,7,8, 9):
     try:
-        st.write("X Value:", df2['high'].iloc[x])
+        st.write(f"X Value {x}:", df2['high'].iloc[x])
         if x>=5:
           if df2['high'].iloc[x+1] >= df2['high'].iloc[x]:
             pattn +="U"
