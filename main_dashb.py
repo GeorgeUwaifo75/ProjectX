@@ -93,7 +93,7 @@ def handle_userinput(coin,COIN_API,indx):
   ax.grid()
 
   # Rotate X-axis labels
-  plt.xticks(rotation=45)
+  plt.xticks(rotation=78)
 
   st.pyplot(fig)
 
