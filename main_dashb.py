@@ -90,6 +90,7 @@ def handle_userinput(coin,COIN_API,indx):
   ax.set_title(f"Coin:{coin}")
   ax.set_xlabel("Dates")
   ax.set_ylabel("Prices")
+  ax.grid()
 
   # Rotate X-axis labels
   plt.xticks(rotation=45)
