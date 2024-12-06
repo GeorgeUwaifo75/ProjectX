@@ -100,7 +100,7 @@ def handle_userinput(coin,COIN_API):
     except IndexError:
         st.write(f"Index {x} out of bounds.")
   
-  st.write("Pattern:", df2[pattn)
+  st.write("Pattern:", pattn)
 
   
   try:
