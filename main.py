@@ -97,7 +97,7 @@ def handle_userinput(coin,COIN_API):
           else:
             pattn +="D"
         else:
-          pattn+="N"
+          pattn+="-"
           
     except IndexError:
         st.write(f"Index {x} out of bounds.")
