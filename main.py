@@ -143,6 +143,7 @@ def handle_userinput(coin,COIN_API):
 
   # Rotate X-axis labels
   plt.xticks(rotation=45)
+  plt.grid()
 
   st.pyplot(fig)
 #New addition ends
