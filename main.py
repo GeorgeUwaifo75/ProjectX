@@ -80,7 +80,7 @@ def handle_userinput(coin,COIN_API):
   
   df2 = pd.DataFrame(data_array)
  
-  #st.write(df2.shape)
+  st.write(df2.shape)
 
   # Iterate through the items in the 'Data' array
   #for item in data_array:
