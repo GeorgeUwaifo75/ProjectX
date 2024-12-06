@@ -80,13 +80,16 @@ def handle_userinput(coin,COIN_API):
   
   df2 = pd.DataFrame(data_array)
  
-  st.write(df2.shape)
+  #st.write(df2.shape)
 
   # Iterate through the items in the 'Data' array
   #for item in data_array:
   #    # Process each item here
   #    st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto']) 
 
+  for x in (8,9,10):
+    st.write("X Value:",df2['high'].[x])
+    
   try:
       # Convert Unix timestamps to datetime objects
       df2['time'] = pd.to_datetime(df2['time'], unit='s')
