@@ -102,7 +102,7 @@ def handle_userinput(coin,COIN_API):
     except IndexError:
         st.write(f"Index {x} out of bounds.")
   
-  st.write("Pattern:", pattn)
+  st.write("Pattern:", :red[pattn])
 
   
   try:
