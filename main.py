@@ -115,7 +115,8 @@ def handle_userinput(coin,COIN_API):
   #st.write("Xter 4:",pattn[4])
 
   if lowerV > upperV:
-    percntg=(100-((100/upperV)*lowerV))
+    #percntg=(100-((100/upperV)*lowerV))
+    percntg=(100/upperV)*lowerV)
     st.write("percntg:",percntg)
   
   try:
