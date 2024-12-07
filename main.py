@@ -88,21 +88,29 @@ def handle_userinput(coin,COIN_API):
   #    st.write(item['time'], item['high'], item['low'], item['open'], item['volumefrom'], item['volumeto']) 
 
   pattn=""
+  lowerV=0
+  upperV=0
+  
   for x in (5,6,7,8,9,10):
     try:
         st.write(f"X Value {x}:", df2['high'].iloc[x])
         if x>=5 and x<10:
           if df2['high'].iloc[x+1] >= df2['high'].iloc[x]:
             pattn +="U"
+            if x==7:
+              lowerV=df2['high'].iloc[x]
           else:
             pattn +="D"
         else:
           pattn+="-"
+          upperV=df2['high'].iloc[x]
           
     except IndexError:
         st.write(f"Index {x} out of bounds.")
   
   st.write("Pattern:",pattn)
+  st.write("Lower:",lowerV)
+  st.write("Upper:",upperV)
 
   
   try:
