@@ -96,10 +96,11 @@ def handle_userinput(coin,COIN_API):
     try:
         st.write(f"X Value {x}:", df2['high'].iloc[x])
         if x>=5 and x<10:
+          if x==8:
+            lowerV=df2['high'].iloc[x]
+         
           if df2['high'].iloc[x+1] >= df2['high'].iloc[x]:
             pattn +="U"
-          if x==7:
-            lowerV=df2['high'].iloc[x]
           else:
             pattn +="D"
         else:
@@ -116,7 +117,6 @@ def handle_userinput(coin,COIN_API):
 
   if lowerV > upperV:
     percntg= round( (100-((100/lowerV)*upperV)),2)
-    #percntg=((100/upperV)*lowerV)
     st.write("percntg:",percntg)
   
   try:
