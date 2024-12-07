@@ -90,6 +90,7 @@ def handle_userinput(coin,COIN_API):
   pattn=""
   lowerV=0
   upperV=0
+  percntg=0
   
   for x in (5,6,7,8,9,10):
     try:
@@ -109,10 +110,13 @@ def handle_userinput(coin,COIN_API):
         st.write(f"Index {x} out of bounds.")
   
   st.write("Pattern:",pattn)
-  st.write("Lower:",lowerV)
-  st.write("Upper:",upperV)
-  st.write("Xter 4:",pattn[5])
+  #st.write("Lower:",lowerV)
+  #st.write("Upper:",upperV)
+  #st.write("Xter 4:",pattn[4])
 
+  if lowerV > upperV:
+    percntg=((100/upperV)*lowerV)
+    st.write("percntg:",percntg)
   
   try:
       # Convert Unix timestamps to datetime objects
