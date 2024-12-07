@@ -98,8 +98,8 @@ def handle_userinput(coin,COIN_API):
         if x>=5 and x<10:
           if df2['high'].iloc[x+1] >= df2['high'].iloc[x]:
             pattn +="U"
-            if x==7:
-              lowerV=df2['high'].iloc[x]
+          if x==7:
+            lowerV=df2['high'].iloc[x]
           else:
             pattn +="D"
         else:
