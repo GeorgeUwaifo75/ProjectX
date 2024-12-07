@@ -118,6 +118,12 @@ def handle_userinput(coin,COIN_API):
   if lowerV > upperV:
     percntg= round( (100-((100/lowerV)*upperV)),2)
     st.write("percntg:",percntg)
+    if pattn[4]=='U' and percntg >= 3:
+        st.write("With a percentage drop of 3% or above, you should buy if the sentiment is neutral or positive.")
+    elif pattn[4]=='U' and percntg >= 1.5 and percntg < 3:
+        st.write("The percentage drop of between 1.5% and 3%, you should buy if the sentiment is neutral or positive.")
+    elif pattn[4]=='U' and percntg >= 0.5 and percntg < 1.5:
+        st.write("The percentage drop of between 0.5% and 1.5%, you should buy if the sentiment positive.")
   
   try:
       # Convert Unix timestamps to datetime objects
