@@ -116,7 +116,7 @@ def handle_userinput(coin,COIN_API):
 
   if lowerV > upperV:
     #percntg=(100-((100/upperV)*lowerV))
-    percntg=(100/upperV)*lowerV)
+    percntg=((100/upperV)*lowerV)
     st.write("percntg:",percntg)
   
   try:
