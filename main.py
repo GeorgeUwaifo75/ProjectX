@@ -110,8 +110,8 @@ def handle_userinput(coin,COIN_API):
         st.write(f"Index {x} out of bounds.")
   
   st.write("Pattern:",pattn)
-  #st.write("Lower:",lowerV)
-  #st.write("Upper:",upperV)
+  st.write("Lower:",lowerV)
+  st.write("Upper:",upperV)
   #st.write("Xter 4:",pattn[4])
 
   if lowerV > upperV:
