@@ -111,6 +111,7 @@ def handle_userinput(coin,COIN_API):
   st.write("Pattern:",pattn)
   st.write("Lower:",lowerV)
   st.write("Upper:",upperV)
+  st.write("Xter 4:",chr(4))
 
   
   try:
