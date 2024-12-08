@@ -123,7 +123,7 @@ def handle_userinput(coin,COIN_API):
     elif pattn[4]=='U' and percntg >= 0.5 and percntg < 1.5:
         st.write("The percentage drop of between 0.5% and 1.5%, you should buy if the sentiment positive.")
     elif pattn[4]=='D' and percntg >= 1.1 and percntg <= 2.0:
-        st.write("There is a moderate percentage drop of between 1.5% and 2.0%, watch this asset for when it picks up.")
+        st.write("There is a moderate percentage drop of between 1.1% and 2.0%, watch this asset for when it picks up.")
     elif pattn[4]=='D' and percntg > 2.0:
         st.write("There is has been a sharp percentage drop of over 2.0%, this might be an opportuned time to invest.")
   
